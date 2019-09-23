@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript">
+    var _xhr = new XMLHttpRequest();
+    _xhr.open('GET', "02.php", true);
+    _xhr.send();
+
+    function VerAuto(OBJETO)
+    {
+       
+        console.log(OBJETO);
+    }
+
+    _xhr.onreadystatechange = function () {
+                if (_xhr.readyState === 4) {
+                    if (_xhr.status === 200) {
+                        var STRautos=_xhr.responseText;
+                        //console.log(STRautos);
+                        var OBJ=JSON.parse(STRautos);
+                        //console.log(OBJ[0].Color);
+                        //table, th, td {border: 1px solid black;}
+                        var tabla='<table style="border: 1px solid black"><tr style="border: 1px solid black"><td>ID</td><td>MARCA</td><td>PRECIO</td><td>COLOR</td><td>MODELO</td></tr>';
+                        for (let index = 0; index < OBJ.length; index++) {
+                            tabla+='<tr><td>'+OBJ[index].Id+"</td><td>"+OBJ[index].Marca+"</td>"+
+                               "<td>"+ OBJ[index].Precio+"</td><td>"+OBJ[index].Color+"</td><td>"+OBJ[index].Modelo+"</td><td><input type='button' value='ACCION' onclick='VerAuto("+JSON.stringify(OBJ[index])+")'</td></tr>";
+                            //console.log(JSON.stringify(OBJ[index]));
+                        }
+                        tabla+="</table>";  
+                        document.getElementById("div1").innerHTML=tabla;  
+                    }
+                    else {
+                        if (error !== undefined) {
+                            error(_xhr.status);
+                        }
+                    }
+                }
+    }
+    </script>
+    <title>JSON 02</title>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

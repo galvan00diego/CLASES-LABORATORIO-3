@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript">
+    var obj={"codigoBarra":0001,"nombre":"pollo","precio":350};
+    console.log(obj.codigoBarra+" - "+obj.nombre+" - "+obj.precio);
+    alert(obj.codigoBarra+" - "+obj.nombre+" - "+obj.precio);
+    parametros=JSON.stringify(obj);
+
+    var _xhr = new XMLHttpRequest();
+    _xhr.open('POST', "json_test.php", true);
+    _xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    _xhr.send("producto="+parametros);
+
+    _xhr.onreadystatechange = function () {
+                if (_xhr.readyState === 4) {
+                    if (_xhr.status === 200) {
+                        var STRprod=_xhr.responseText;
+                        console.log("JSON RECIBIDO EN FORMATO STRING "+STRprod);
+                        var OBJprod=JSON.parse(STRprod);
+                        console.log("NOMBRE MODIFICADO= "+OBJprod.nombre + ",PRECIO= "+OBJprod.precio);
+                    }
+                    else {
+                        if (error !== undefined) {
+                            error(_xhr.status);
+                        }
+                    }
+                }
+    }
+
+    </script>
+    <title>JSON_01</title>
+</head>
+<body>
+    
+</body>
+</html>
