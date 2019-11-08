@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="bower_full\libs\bootstrap\dist\css\bootstrap.min.css">
+    <script src="bower_full\libs\jquery\dist\jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bower_full\libs\bootstrap\dist\js\bootstrap.min.js"></script>
+
+    <title>Bootstrap</title>
+</head>
+
+<body style="color: lightgoldenrodyellow;">
+    <div class="container-fluid" style="background-color: rgb(25, 112, 8);">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+                <img src="futbol.jpg" class="rounded" style="height: 200px; width: 200px;">
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>PELIGRO!</strong>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-4">
+                <img src="futbol.jpg" class="rounded-circle" style="height: 200px; width: 200px;">
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>B</strong>ien!
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-3 col-md-4">
+                <img src="futbol.jpg" class="img-thumbnail" style="height: 200px; width: 200px;">
+                <div class="alert alert-dark"><strong>D</strong>ark</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-sm-2 col-md-3">
+                <img src="futbol2.jpg" class="rounded" style="height: 200px; width: 200px;">
+
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    ABRIR
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!--Modal Header-->
+                            <div class="modal-header">
+                                <h4 class="modal-title text-success">Modal Heading</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body text-success">
+                                Modal body..
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-8 col-md-3">
+                <img src="futbol2.jpg" class="rounded-circle" style="height: 200px; width: 200px;">
+                <div class="alert alert-success">BIEN</div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-3">
+                <img src="futbol2.jpg" class="img-thumbnail" style="height: 200px; width: 200px;">
+                <div class="alert alert-danger">MAL</div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-3">
+                <img src="futbol2.jpg" class="img-thumbnail" style="height: 200px; width: 200px;">
+                <div class="alert alert-info">INFO</div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
